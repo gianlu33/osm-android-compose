@@ -53,7 +53,7 @@ fun Polyline(
                 isVisible = visible
                 id?.let { this.id = id }
 
-                mapView.overlayManager.add(this)
+                mapView.overlayManager.add(0, this)
                 onPolylineLoaded.invoke(outlinePaint)
 
                 infoWindow = null
