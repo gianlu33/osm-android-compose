@@ -23,6 +23,7 @@ fun Marker(
     snippet: String? = null,
     onClick: (Marker) -> Boolean = { false },
     id: String? = null,
+    anchor: Pair<Float, Float> = Pair(0.5f, 0.5f),
     infoWindowContent: @Composable (InfoWindowData) -> Unit = {}
 ) {
 
@@ -39,6 +40,8 @@ fun Marker(
                 setVisible(visible)
                 icon?.let { this.icon = it }
                 id?.let { this.id = it }
+
+                setAnchor(anchor.first, anchor.second)
             }
 
             mapView.overlayManager.add(marker)
